@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col s6 offset-s3">
+        <p><a routerLink="">Home</a></p>
+        <h5>Edit this author:</h5>
+        <div class="card">
+            <div class="card-content">
+                <div class="input-field">
+                    <input [(ngModel)]="author.name" id="name" name="name" type="text">
+                    <label [ngClass]="{'active': author.name != ''}" for="name">Name</label>
+                </div>
+                <div>
+                    <button routerLink="/" class="waves-effect waves-light btn red">Cancel</button>&nbsp;
+                    <button (click)="updateAuthor()" class="waves-effect waves-light btn">Submit</button>
+                </div>
+            </div>
+        </div>
+        <p *ngIf="nameError">Name must be at least 3 characters</p>
+    </div>
+</div>

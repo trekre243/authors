@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col s6 offset-s3">
+        <p><a routerLink="new">Add an author</a></p>
+        <h5>We have quotes by:</h5>
+        <table class="highlight">
+            <thead>
+                <th>Author</th>
+                <th>Actions Available</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let author of authors; let i = index">
+                    <td>{{ author.name }}</td>
+                    <td>
+                        <button [routerLink]="['/edit', author._id]" class="waves-effect waves-light btn yellow">Edit</button>&nbsp;
+                        <button (click)="deleteAuthor(i)" class="waves-effect waves-light btn red">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
